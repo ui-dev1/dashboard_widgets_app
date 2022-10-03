@@ -1,0 +1,22 @@
+@use '../../shared/constants/colors' as colors;
+
+.header {
+    /* position: fixed;
+    top: 0; */
+    background-color: colors.$white;
+    padding: 16px 0;
+    width: 100%;
+    z-index: 1;
+    flex-direction: row-reverse;
+}
+
+.link {
+        text-decoration: none;
+            color: colors.$lightBlue;
+            font-size: 20px;
+            font-weight: 500;
+}
+.flex-div {
+    display: flex;
+}
+

@@ -1,0 +1,12 @@
+@use '../shared/constants/colors' as colors;
+
+.layout {
+    background-color: colors.$white;
+    display: flex;
+    height: 100%;
+}
+
+.layout-container {
+    margin: 16px;
+    padding: 16px;  
+}

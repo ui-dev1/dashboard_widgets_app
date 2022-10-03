@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.title {
+    width: 95%;
+}
+
+.content {
+    color: white;
+}
+.formCard {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 3rem;
+}
+.formField {
+    width: 100%;
+    /* height: 5%; */
+}
+
+.signForm {
+    margin-top: 2rem;
+}
+.textContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
