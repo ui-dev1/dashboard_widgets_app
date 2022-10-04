@@ -1,45 +1,21 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Button, Card, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import './login.scss';
 import { ROUTE_CONSTANTS } from '../../utils/appConstants';
 import { isAuthenticated } from '../../redux/actions/userActions';
 import { useState } from 'react';
-import { setTypes } from '../../redux/actions/widgetsActions';
+import { fetchWidgetsType } from '../../redux/thunks/widgetsThunks';
 const Login = () => {
   const [userId, setUserId] = useState('');
   let navigate = useNavigate();
   const dispatch = useDispatch();
-  const { role } = useSelector((state) => state.user);
 
   const handleSignIn = () => {
     dispatch(isAuthenticated(true));
-    let payload;
-    if (role === 'SuperAdmin') {
-      payload = [
-        {
-          type: 'Table',
-          title: 'User data',
-          url: 'tableData',
-        },
-        {
-          type: 'Chart',
-          title: 'User Chat',
-          url: 'chartData',
-        },
-      ];
-    } else {
-      payload = [
-        {
-          type: 'Table',
-          title: 'User data',
-          url: 'tableData',
-        },
-      ];
-    }
-    dispatch(setTypes(payload));
+    dispatch(fetchWidgetsType());
     navigate(ROUTE_CONSTANTS.DASHBOARD);
   };
 

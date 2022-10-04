@@ -14,7 +14,6 @@ const ProtectedRoutes = () => {
   ) : (
     <Navigate to={ROUTE_CONSTANTS.LOGIN} state={{ from: location }} replace />
   );
-
 };
 
 export default ProtectedRoutes;
